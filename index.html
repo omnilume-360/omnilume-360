@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2456a6">
+  <meta name="description" content="OmniLUME: Towards Omnidirectional Video Quality Understanding and Assessment. A scanpath-oriented multimodal model for 360° video quality scores and fine-grained explanations, with the VRQU dataset.">
+  <meta name="keywords" content="OmniLUME, VRQU, omnidirectional video, quality assessment, quality understanding, multimodal large language model, scanpath">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OmniLUME: Towards Omnidirectional Video Quality Understanding and Assessment">
+  <meta property="og:description" content="Understanding 360° video quality through viewing behavior, perceptual attributes, and temporal stages.">
+  <meta property="og:image" content="./static/images/framework.png">
+  <title>OmniLUME: Towards Omnidirectional Video Quality Understanding and Assessment</title>
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.63 1.22 3.27.93.1-.72.4-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.54 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.61 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.22 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.64 5.26-5.14 5.54.4.35.76 1.03.76 2.08v3.07c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="OmniLUME home"><img src="./static/images/favicon.svg" width="28" height="28" alt="">OmniLUME</a>
+      <nav aria-label="Main navigation"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#dataset">VRQU</a><a href="#results">Results</a><a href="#resources">Resources</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="paper-title">
+      <p class="eyebrow">Omnidirectional video · Quality assessment · Quality understanding</p>
+      <h1 id="paper-title"><span class="paper-name">OmniLUME<span class="title-colon">: </span></span><span class="paper-title">Towards Omnidirectional Video<br class="desktop-break"> Quality Understanding and Assessment</span></h1>
+      <p class="authors">Tie Liu<span class="author-separator">,</span> Mai Xu<span class="author-separator">,</span> Shengxi Li<sup>*</sup><span class="author-separator">,</span> Senmao Ma<span class="author-separator">,</span> Yangyi An</p>
+      <p class="affiliation">School of Electronic and Information Engineering, Beihang University</p>
+      <p class="correspondence"><sup>*</sup> Corresponding author: Shengxi Li</p>
+      <div class="publication-links">
+        <a class="button button-primary" href="./liutie_TCSVT2026_OmniLUME.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-paper"></use></svg>Paper (PDF)</a>
+        <a class="button button-dark code-link" href="#code"><svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>Code on GitHub</a>
+      </div>
+      <p class="hero-summary">A scanpath-oriented multimodal model that assesses 360° video quality<br class="desktop-break"> and explains it across perceptual attributes and viewing stages.</p>
+    </section>
+    <section class="overview-section" aria-labelledby="overview-title">
+      <div class="container overview-grid">
+        <div class="overview-copy">
+          <p class="eyebrow">The idea</p><h2 id="overview-title">Understand quality<br>through the viewer’s eyes.</h2>
+          <p>In a 360° video, viewers explore different regions over time. Their experience depends on both <strong>where they look</strong> and <strong>which quality factors they perceive</strong>.</p>
+          <p>OmniLUME models this viewing process with predicted and representative scanpaths, then produces an overall quality score and detailed explanations from temporal and attribute perspectives.</p>
+          <div class="perspective-labels"><span>5 perceptual attributes</span><span>3 temporal stages</span><span>1 unified framework</span></div>
+        </div>
+        <figure class="paper-figure overview-figure">
+          <a class="figure-link" href="./static/images/overview.png" target="_blank" rel="noopener" data-figure-title="Figure 1 · From quality scoring to quality understanding" aria-label="Enlarge Figure 1: OmniLUME overview">
+            <img src="./static/images/overview.png" width="753" height="843" alt="Paper Figure 1 compares existing score-only BVQA with VRQU annotations and OmniLUME's temporal and attribute quality explanations." fetchpriority="high">
+            <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+          </a>
+          <figcaption><span class="figure-number">Figure 1.</span> Quality assessment and understanding in one framework.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section container" id="abstract" aria-labelledby="abstract-title">
+      <div class="section-heading"><p class="eyebrow">Paper overview</p><h2 id="abstract-title">Abstract</h2></div>
+      <div class="abstract-text">
+        <p>In recent years, the rapid proliferation of omnidirectional videos (ODVs) has increased the demand for blind visual quality assessment. Existing ODV quality metrics typically learn quality features given the single quality score. However, the quality assessment of ODVs remains challenging and non-trivial, as the existing methods fail to provide the insightful perspectives and explanations aligned with human perception and understanding. To address the limitation, we propose a novel scanpath oriented multimodal large language model (MLLM), towards Omnidirectional video quaLity Understanding and assessMEnt (named as <strong>OmniLUME</strong>), as the first attempt in this direction. Specifically, we first gather <strong>269K quality annotations</strong> from two perspectives: temporal and attribute perspectives. Here, we consider eight fine-grained dimensions, including different video stages (e.g., initial stage) for the temporal perspective, and quality factors (e.g., compression artifacts) for the attribute perspective. These explanation-level annotations and corresponding text descriptions enable us to develop a scanpath oriented MLLM paradigm for jointly predicting score and detailed explanations regarding various dimensions in a unified network. The paradigm seamlessly incorporates scene and kinematic cues to mimic authentic viewing behaviors for producing viewport sequences. These sequences along with a matched representative viewport sequence are fed into the MLLM decoder to produce the quality score and textual quality description for the input ODV. Comprehensive experiments have demonstrated that OmniLUME consistently outperforms the comparing methods in both quality assessment and understanding for ODVs.</p>
+      </div>
+      <div class="contributions">
+        <article><span class="contribution-number">01</span><h3>Unified quality modeling</h3><p>A scanpath-oriented MLLM jointly predicts quality scores and detailed perceptual explanations for omnidirectional videos.</p></article>
+        <article><span class="contribution-number">02</span><h3>Fine-grained supervision</h3><p>VRQU enriches real-world 360° videos with human ratings and quality descriptions across eight dimensions.</p></article>
+        <article><span class="contribution-number">03</span><h3>Comprehensive evaluation</h3><p>Experiments examine quality scoring, quality understanding, viewing conditions, and synthetic streaming impairments.</p></article>
+      </div>
+    </section>
+    <section class="section section-tinted" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">How it works</p><h2 id="method-title">The OmniLUME framework</h2><p>Model viewing behavior, retrieve a representative path, and assess quality with multimodal instructions.</p></div>
+        <figure class="paper-figure wide-figure">
+          <a class="figure-link" href="./static/images/framework.png" target="_blank" rel="noopener" data-figure-title="Figure 5 · The S²K predictor and OmniLUME framework" aria-label="Enlarge Figure 5: OmniLUME framework">
+            <img src="./static/images/framework.png" width="1545" height="759" alt="Paper Figure 5 shows spherical scene and kinematic aware scanpath prediction, representative scanpath matching, and multimodal branches for quality scores and quality descriptions." loading="lazy">
+            <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+          </a>
+          <figcaption><span class="figure-number">Figure 5.</span> The S²K predictor (left) and overall architecture of OmniLUME (right). Each viewport sequence is paired with a task-specific instruction.</figcaption>
+        </figure>
+        <ol class="method-steps">
+          <li><h3>S²K scanpath prediction</h3><p>The spherical scene and kinematic aware predictor combines spatial scene structure, motion dynamics, color contrast, and kinematic constraints to sequentially select viewing directions.</p></li>
+          <li><h3>Representative scanpath matching</h3><p>A bank of human viewing priors is constructed with K-means. Cosine similarity retrieves the representative scanpath that best matches the anchor predicted path.</p></li>
+          <li><h3>Multimodal assessment and understanding</h3><p>A vision encoder, text embedding layer, and MLLM decoder process the viewport sequences and quality instructions. Path-level scores are averaged, while textual outputs explain temporal and attribute quality.</p></li>
+        </ol>
+        <p class="implementation-note">The reported configuration uses <strong>two predicted scanpaths and one matched representative scanpath</strong>, a backbone initialized from mPLUG-Owl2, 1 fps frame sampling, and 448 × 448 input patches.</p>
+      </div>
+    </section>
+    <section class="section container" id="dataset" aria-labelledby="dataset-title">
+      <div class="section-heading"><p class="eyebrow">The dataset</p><h2 id="dataset-title">VRQU: quality from eight perspectives</h2><p>Fine-grained quality annotations for real-world omnidirectional videos, extending the VRVQW dataset.</p></div>
+      <dl class="dataset-stats">
+        <div><dt>Video / viewing-condition samples</dt><dd>2,008</dd></div><div><dt>Unique video contents</dt><dd>502</dd></div><div><dt>Human quality ratings</dt><dd>268,576</dd></div><div><dt>Question–answer pairs</dt><dd>4,016</dd></div>
+      </dl>
+      <p class="dataset-description">The subjective study involves <strong>39 participants</strong> and covers cityscapes, landscapes, shows, sports, computer graphics, and other content. Quality descriptions are generated from the human ratings and manually reviewed.</p>
+      <figure class="paper-figure wide-figure">
+        <a class="figure-link" href="./static/images/vrqu-dimensions.png" target="_blank" rel="noopener" data-figure-title="Figure 2 · Quality dimensions in the VRQU dataset" aria-label="Enlarge Figure 2: VRQU quality dimensions">
+          <img src="./static/images/vrqu-dimensions.png" width="1545" height="606" alt="Paper Figure 2 illustrates sharpness, noise, motion blur, compression, composition, and the initial, middle, and end viewing stages using real-world 360° video frames." loading="lazy">
+          <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+        </a>
+        <figcaption><span class="figure-number">Figure 2.</span> Real-world examples of perceptual differences across the attribute and temporal dimensions.</figcaption>
+      </figure>
+      <div class="dimensions-grid">
+        <div><h3>Attribute perspective</h3><p class="dimension-intro">What contributes to the perceived quality?</p><ul class="dimension-list"><li><span>A-1</span>Sharpness</li><li><span>A-2</span>Noise</li><li><span>A-3</span>Motion blur</li><li><span>A-4</span>Compression artifacts</li><li><span>A-5</span>Composition</li></ul></div>
+        <div><h3>Temporal perspective</h3><p class="dimension-intro">How does quality evolve during exploration?</p><ul class="dimension-list"><li><span>T-1</span>Initial: the first impression</li><li><span>T-2</span>Middle: active scene exploration</li><li><span>T-3</span>End: the final impression</li></ul><p class="quality-scale">Subjective scale: <strong>bad · poor · fair · good · excellent</strong></p></div>
+      </div>
+    </section>
+    <section class="section section-tinted" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Experimental results</p><h2 id="results-title">Quality assessment and understanding</h2><p>Results below are reproduced from the supplied paper. Higher correlation and lower prediction error indicate better quality assessment.</p></div>
+        <h3 class="result-heading">Quality assessment on VRQU</h3>
+        <dl class="result-stats" aria-label="OmniLUME results from Table II"><div><dt>PLCC ↑</dt><dd>0.8069</dd></div><div><dt>SROCC ↑</dt><dd>0.8127</dd></div><div><dt>KROCC ↑</dt><dd>0.6108</dd></div><div><dt>RMSE ↓</dt><dd>0.4896</dd></div><div><dt>MAE ↓</dt><dd>0.3943</dd></div></dl>
+        <p>OmniLUME achieves the best overall result across all five metrics against ten comparing methods on VRQU. Training and test sets are split at the content level in a 4:1 ratio to avoid content overlap.</p>
+        <figure class="paper-figure wide-figure result-figure">
+          <a class="figure-link" href="./static/images/assessment-results.png" target="_blank" rel="noopener" data-figure-title="Table II · Quality assessment performance on VRQU" aria-label="Enlarge Table II: VRQU quality assessment results">
+            <img src="./static/images/assessment-results.png" width="1434" height="531" alt="Paper Table II compares eleven quality assessment methods on VRQU. OmniLUME obtains PLCC 0.8069, SROCC 0.8127, KROCC 0.6108, RMSE 0.4896, and MAE 0.3943." loading="lazy">
+            <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+          </a>
+          <figcaption><span class="figure-number">Table II.</span> Overall quality assessment on the real-world VRQU dataset.</figcaption>
+        </figure>
+        <div class="additional-result"><strong>Evaluation on VRQoE-JUFE.</strong><p>On the synthetic adaptive-streaming dataset, OmniLUME reports <strong>0.7314 PLCC</strong>, <strong>0.7048 SROCC</strong>, and <strong>0.5819 RMSE</strong>, achieving the best overall results among the compared methods in Table V.</p></div>
+        <h3 class="result-heading understanding-heading">Fine-grained quality understanding</h3>
+        <p>The paper evaluates generated descriptions for completeness, precision, and relevance. OmniLUME achieves the highest scores for each criterion from both perspectives, with total scores of <strong>3.4183 for temporal understanding</strong> and <strong>3.3020 for attribute understanding</strong>.</p>
+        <figure class="paper-figure wide-figure result-figure">
+          <a class="figure-link" href="./static/images/understanding-results.png" target="_blank" rel="noopener" data-figure-title="Table IV · Quality understanding performance" aria-label="Enlarge Table IV: quality understanding results">
+            <img src="./static/images/understanding-results.png" width="1452" height="363" alt="Paper Table IV compares quality understanding by LLaVA-1.5, CogVLM2-Video, mPLUG-Owl2, InternVL2, Qwen2.5-VL, ChatGPT-5.4, and OmniLUME across temporal and attribute perspectives." loading="lazy">
+            <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+          </a>
+          <figcaption><span class="figure-number">Table IV.</span> Description quality measured by the paper’s GPT-5-based completeness, precision, and relevance evaluation.</figcaption>
+        </figure>
+        <div class="qualitative-grid">
+          <div class="qualitative-copy"><p class="eyebrow">A closer look</p><h3>Descriptions grounded in quality factors.</h3><p>In the example from Figure 7, OmniLUME identifies fair quality across all five perceptual attributes, in agreement with the reference description.</p><blockquote>“Comprehensive quality assessment results show that the omnidirectional video achieves fair quality in sharpness, fair quality in noise, fair quality in motion blur, fair quality in compression artifacts, and fair quality in composition.”</blockquote><p class="quote-source">OmniLUME output · Figure 7</p></div>
+          <figure class="paper-figure qualitative-figure">
+            <a class="figure-link" href="./static/images/quality-understanding.png" target="_blank" rel="noopener" data-figure-title="Figure 7 · Qualitative quality understanding comparison" aria-label="Enlarge Figure 7: quality understanding comparison">
+              <img src="./static/images/quality-understanding.png" width="753" height="690" alt="Paper Figure 7 shows still viewport frames, a quality-analysis question, the reference answer, and quality descriptions generated by the comparing multimodal models and OmniLUME." loading="lazy">
+              <span class="expand-hint"><svg class="icon" aria-hidden="true"><use href="#icon-expand"></use></svg>Enlarge</span>
+            </a>
+            <figcaption><span class="figure-number">Figure 7.</span> Qualitative comparison of generated quality explanations.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section container" id="resources" aria-labelledby="resources-title">
+      <div class="section-heading"><p class="eyebrow">Read and explore</p><h2 id="resources-title">Paper &amp; code</h2></div>
+      <div class="resource-grid">
+        <a class="resource-link" href="./liutie_TCSVT2026_OmniLUME.pdf" target="_blank" rel="noopener"><svg class="resource-icon" aria-hidden="true"><use href="#icon-paper"></use></svg><span><strong>Read the paper</strong><span>The complete OmniLUME manuscript, with all figures and experiments.</span></span><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+        <a class="resource-link code-link" id="code" href="#code"><svg class="resource-icon" aria-hidden="true"><use href="#icon-github"></use></svg><span><strong>Code on GitHub</strong><span id="code-description">Repository link pending.</span></span><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+      </div>
+      <div class="citation">
+        <div class="citation-heading"><h3>BibTeX</h3><button class="copy-button" type="button" id="copy-citation">Copy citation</button></div>
+        <pre><code id="bibtex">@misc{liu2026omnilume,
+  title  = {OmniLUME: Towards Omnidirectional Video
+            Quality Understanding and Assessment},
+  author = {Liu, Tie and Xu, Mai and Li, Shengxi and
+            Ma, Senmao and An, Yangyi},
+  year   = {2026}
+}</code></pre>
+        <p class="citation-note">Citation for the supplied manuscript.</p><p class="sr-only" role="status" id="copy-status"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p><strong>OmniLUME</strong> · Beihang University</p><p>All paper figures and results are reproduced from the OmniLUME manuscript.</p><a href="#top">Back to top ↑</a></div></footer>
+  <dialog class="image-dialog" id="image-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><p id="dialog-title"></p><button class="dialog-close" type="button" aria-label="Close enlarged figure">×</button></div>
+    <div class="dialog-image-area"><img id="dialog-image" alt=""></div><p class="dialog-help">Press Esc or click outside the image to close.</p>
+  </dialog>
+</body>
+</html>
