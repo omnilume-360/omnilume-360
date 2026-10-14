@@ -1,0 +1,86 @@
+[
+  {
+    "file": "static/images/overview.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 1,
+    "crop_points": [
+      312,
+      176,
+      563,
+      457
+    ],
+    "caption": "Figure 1: comparison of existing BVQA methods and OmniLUME",
+    "width": 753,
+    "height": 843
+  },
+  {
+    "file": "static/images/vrqu-dimensions.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 4,
+    "crop_points": [
+      48,
+      55,
+      563,
+      257
+    ],
+    "caption": "Figure 2: visual examples of the eight quality dimensions in VRQU",
+    "width": 1545,
+    "height": 606
+  },
+  {
+    "file": "static/images/framework.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 6,
+    "crop_points": [
+      48,
+      55,
+      563,
+      308
+    ],
+    "caption": "Figure 5: S2K predictor and the overall OmniLUME framework",
+    "width": 1545,
+    "height": 759
+  },
+  {
+    "file": "static/images/assessment-results.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 8,
+    "crop_points": [
+      65,
+      89,
+      543,
+      266
+    ],
+    "caption": "Table II: quality assessment on VRQU",
+    "width": 1434,
+    "height": 531
+  },
+  {
+    "file": "static/images/understanding-results.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 10,
+    "crop_points": [
+      63,
+      82,
+      547,
+      203
+    ],
+    "caption": "Table IV: quality understanding comparisons",
+    "width": 1452,
+    "height": 363
+  },
+  {
+    "file": "static/images/quality-understanding.png",
+    "source_pdf": "liutie_TCSVT2026_OmniLUME.pdf",
+    "page": 10,
+    "crop_points": [
+      312,
+      215,
+      563,
+      445
+    ],
+    "caption": "Figure 7: qualitative comparison of quality understanding",
+    "width": 753,
+    "height": 690
+  }
+]
